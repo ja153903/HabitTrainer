@@ -1,34 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
+        android:padding="8dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.example.jaime.habittrainer.CreateHabitActivity">
+        tools:context="com.example.jaime.habittrainer.CreateHabitActivity"
+        android:orientation="vertical">
 
-    <android.support.design.widget.AppBarLayout
-            android:layout_height="wrap_content"
+    <EditText
             android:layout_width="match_parent"
-            android:theme="@style/AppTheme.AppBarOverlay">
-
-        <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
-                app:popupTheme="@style/AppTheme.PopupOverlay"/>
-
-    </android.support.design.widget.AppBarLayout>
-
-    <include layout="@layout/content_create_habit"/>
-
-    <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="@dimen/fab_margin"
-            app:srcCompat="@android:drawable/ic_dialog_email"/>
+            android:id="@+id/etTitle"
+            android:hint="@string/eat_an_apple"
+    />
 
-</android.support.design.widget.CoordinatorLayout>
+    <EditText android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/etDescription"
+              android:inputType="textMultiLine"
+              android:lines="2"
+              android:hint="@string/apple_away"
+    />
+
+    <Button android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnChooseImage"
+            android:text="@string/choose_image"
+            android:onClick="chooseImage"
+    />
+
+    <ImageView android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:id="@+id/ivImage"
+               android:layout_gravity="center_horizontal"
+               android:padding="10dp"
+               android:contentDescription="@string/selected_image"
+    />
+
+    <Button android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnSave"
+            android:text="@string/save_habit"
+    />
+
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/tvError"
+              android:visibility="invisible"
+              android:textColor="#e53935"
+    />
+</LinearLayout>
